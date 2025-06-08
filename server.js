@@ -2,7 +2,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 const express = require("express");
 const mongoose = require("mongoose");
-
+const methodOverride = require("method-override");
+const morgan = require("morgan");
+const path = require("path");
 const app = express();
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -12,7 +14,11 @@ mongoose.connection.on("connected", () => {
 });
 
 const Cars = require("./models/cars.js");
+
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", async (req, res) => {
   res.render("index.ejs");
@@ -36,6 +42,23 @@ app.get("/cars/:carId", async (req, res) => {
 app.post("/cars", async (req, res) => {
   await Cars.create(req.body);
   res.redirect("/cars/new");
+});
+
+app.delete("/cars/:carId", async (req, res) => {
+   await Cars.findByIdAndDelete(req.params.carId);
+  res.redirect("/cars");
+});
+
+app.get("/cars/:carId/edit", async (req, res) => {
+  const foundCar = await Cars.findById(req.params.carId);
+  res.render("cars/edit.ejs", {
+    car: foundCar,
+  });
+});
+
+app.put("/cars/:carId", async (req, res) => {
+  await Cars.findByIdAndUpdate(req.params.carId, req.body);
+  res.redirect(`/cars/${req.params.carId}`);
 });
 
 app.listen(3000, () => {

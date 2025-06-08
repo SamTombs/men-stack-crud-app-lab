@@ -4,8 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= car.make %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>Here are your Dream Cars</h1>
+    <div class="car-details">
+    <h1>Dream Car</h1>
+    <p><%= car.make %> <%= car.model %> <br> <%= car.color %> <br> <%= car.horsepower %> HP
+    </p>
+    <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+    <button type="submit">Delete <%= car.make %></button>
+    </form> 
+    <a href="/cars/<%= car._id %>/edit">Edit <%= car.make %></a>
+    <a class="cars-index-link" href="/cars">
+    </div>    
+   <div class="index-link-text">Back to Cars</div>
+   </a>
   </body>
 </html>

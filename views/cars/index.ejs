@@ -4,14 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cars Index</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
     <h1>All Dream Cars</h1>
     <ul>
     <% cars.forEach(car => { %>
-<li><a href="/cars/<%= car._id %>"><%= car.make %> <%= car.model %>, <%= car.color %> - <%= car.horsepower %> HP</a></li>
+    <li><a class="car-list" href="/cars/<%= car._id %>"><%= car.make %> <%= car.model %>, <%= car.color %> - <%= car.horsepower %> HP</a></li>
     <% }); %>
     </ul>
-    <a href="/cars/new">Add New Car</a>
+    <a class ="car-list" href="/cars/new">Add New Car</a>
+    <a class="cars-index-link" href="/">
+    <div class="index-link-text">Back to Home</div>
+    </a>
   </body>
 </html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Edit Page</h1>
+    <form action="/cars/<%=car._id%>?_method=PUT" method="POST">
+    <label for="color">Color:</label>
+    <input type="text" name="color" id="color" value="<%= car.color %>" /><br>
+    <label for="horsepower">Horsepower:</label>
+    <input type="number" name="horsepower" id="horsepower" min="0" step="1" value="<% car.horsepower %>"/><br>
+    <button type="submit">Update Car</button>
+  </form>
+    <a class="cars-index-link" href="/cars">
+   <div class="index-link-text">Back to Cars</div>
+   </a>
+</body>
+</html>
