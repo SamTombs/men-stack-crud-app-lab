@@ -4,7 +4,7 @@ const carSchema = new mongoose.Schema({
   make: String,
   model:String,
   color: String,
-  horsepower: Number,
+  horsepower: Number
 });
 
 const Cars = mongoose.model("Cars", carSchema);

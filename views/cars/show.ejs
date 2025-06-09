@@ -8,16 +8,16 @@
   </head>
   <body>
     <div class="car-details">
-    <h1>Dream Car</h1>
-    <p><%= car.make %> <%= car.model %> <br> <%= car.color %> <br> <%= car.horsepower %> HP
+    <h1><%= car.make %> <%= car.model %> </h1>
+    <p><br> Color:  <%= car.color %> <br> Horsepower : <%= car.horsepower %> bhp
     </p>
     <form action="/cars/<%=car._id%>?_method=DELETE" method="POST">
+    <a class="edit-button" href="/cars/<%= car._id %>/edit">Edit <%= car.make %></a>
     <button type="submit">Delete <%= car.make %></button>
     </form> 
-    <a href="/cars/<%= car._id %>/edit">Edit <%= car.make %></a>
-    <a class="cars-index-link" href="/cars">
-    </div>    
-   <div class="index-link-text">Back to Cars</div>
-   </a>
+    </div>
+    <a class="cars-index-link" href="/cars">    
+    <div class="index-link-text">Back to Cars</div>
+    </a>
   </body>
 </html>

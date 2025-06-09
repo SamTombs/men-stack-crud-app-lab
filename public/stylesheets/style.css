@@ -1,5 +1,9 @@
  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
 
+ * {
+  box-sizing: border-box;
+ }
+
   body {
    background: #dfdad1;
    font-family: "DM Sans", sans-serif;
@@ -33,6 +37,7 @@
    border-radius: 25px;
    text-align: center;
    box-shadow: 0 5px #f7f7f7;
+   text-decoration: none;
  }
 
  .index-link-text:hover {
@@ -45,7 +50,7 @@
    box-shadow: 0 2.5px #ffbd59;
  }
 
-  form {
+  .car-details {
    font-family: "DM Sans", sans-serif;
    display: flex;
    flex-direction: column;
@@ -58,6 +63,17 @@
    margin: 20px 10px;
  }
 
+ form {
+   font-family: "DM Sans", sans-serif;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   background-color: #b9ced9;
+   padding: 20px 30px;
+   border-radius: 20px;
+   box-shadow: 5px 6px #daedf0;
+   margin: 20px 10px;
+ }
 
  label,
  input {
@@ -65,7 +81,9 @@
  }
 
  button {
-   align-self: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
    margin: 10px 4px 4px 4px;
    background-color: #cb5252;
    color: white;
@@ -73,8 +91,21 @@
    border-radius: 15px;
    border: none;
    width: 15em;
+   cursor: pointer;
  }
 
+ .edit-button {
+    align-self: center;
+   margin: 10px 4px 4px 4px;
+   background-color: #91eaa4;
+   color: white;
+   padding: 5px 15px;
+   border-radius: 15px;
+   border: none;
+   cursor: pointer;
+   text-decoration: none;
+ }
+ 
  button:hover {
    background-color: #c6b9ea;
  }
