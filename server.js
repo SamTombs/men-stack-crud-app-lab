@@ -24,6 +24,7 @@ app.get("/", async (req, res) => {
   res.render("index.ejs");
 });
 
+//List on the index page
 app.get("/cars", async (req, res) => {
   const allCars = await Cars.find();
   console.log(allCars);
@@ -34,21 +35,25 @@ app.get("/cars/new", (req, res) => {
   res.render("cars/new.ejs");
 });
 
+//View a list
 app.get("/cars/:carId", async (req, res) => {
     const foundCar = await Cars.findById(req.params.carId);
   res.render("cars/show.ejs", {car: foundCar})
 });
 
+//Create
 app.post("/cars", async (req, res) => {
   await Cars.create(req.body);
   res.redirect("/cars/new");
 });
 
+//Delete
 app.delete("/cars/:carId", async (req, res) => {
    await Cars.findByIdAndDelete(req.params.carId);
   res.redirect("/cars");
 });
 
+//Edit
 app.get("/cars/:carId/edit", async (req, res) => {
   const foundCar = await Cars.findById(req.params.carId);
   res.render("cars/edit.ejs", {
@@ -56,8 +61,9 @@ app.get("/cars/:carId/edit", async (req, res) => {
   });
 });
 
+//Update
 app.put("/cars/:carId", async (req, res) => {
-  await Cars.findByIdAndUpdate(req.params.carId, req.body);
+  await Cars.findByIdAndUpdate(req.params.carId);
   res.redirect(`/cars/${req.params.carId}`);
 });
 

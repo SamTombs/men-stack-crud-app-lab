@@ -12,7 +12,7 @@
     <label for="color">Color:</label>
     <input type="text" name="color" id="color" value="<%= car.color %>" /><br>
     <label for="horsepower">Horsepower:</label>
-    <input type="number" name="horsepower" id="horsepower" min="0" step="1" value="<% car.horsepower %>"/><br>
+    <input type="number" name="horsepower" id="horsepower" min="0" step="10" value="<%= car.horsepower %>"/><br>
     <button type="submit">Update Car</button>
   </form>
     <a class="cars-index-link" href="/cars">
