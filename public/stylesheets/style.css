@@ -40,6 +40,20 @@
    text-decoration: none;
  }
 
+  .index-link-text2 {
+   background-color: #22c470;
+   color: white;
+   font-size: 1.4em;
+   width: 10em;
+   padding: 5px 5px;
+   margin: 10px;
+   border-radius: 25px;
+   text-align: center;
+   box-shadow: 0 5px #f7f7f7;
+   text-decoration: none;
+ }
+ 
+
  .index-link-text:hover {
    background-color: #e3f0f1;
    box-shadow: 0 5px #7ac1cb;

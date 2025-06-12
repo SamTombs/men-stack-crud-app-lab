@@ -14,7 +14,17 @@
      src="https://i.imgur.com/OtJMOGa.png"
      alt="dream car club"
    />
-    <p>An app for storing your dream car ideas.</p>
-    <a class="index-link-text" href="/cars">Browse Dream Cars</a>
+  <% if (user) { %>
+  <h1>Welcome <%= user.username %></h1>
+  <p><a href="/cars">Members Dream Car Garage</a></p>
+  <p>
+  <a href="/auth/sign-out">Sign out</a>
+</p>
+  <% } else { %>
+  <h1>Welcome to the app</h1>
+  <p>
+  <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">Sign in</a>
+  </p>
+  <% } %>
   </body>
 </html>

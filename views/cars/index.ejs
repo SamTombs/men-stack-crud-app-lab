@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1>All Dream Cars</h1>
+    <h1>Dream Cars Garage</h1>
     <ul>
     <% cars.forEach(car => { %>
     <li><a class="car-list" href="/cars/<%= car._id %>"><%= car.make %> <%= car.model %>, <%= car.color %> - <%= car.horsepower %> HP</a></li>
