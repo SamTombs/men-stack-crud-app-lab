@@ -90,7 +90,7 @@ app.get("/cars/:carId/edit", async (req, res) => {
 
 //Edit || Update
 app.put("/cars/:carId", async (req, res) => {
-  await Cars.findByIdAndUpdate(req.params.carId);
+  await Cars.findByIdAndUpdate(req.params.carId, req.body);
   res.redirect(`/cars/${req.params.carId}`);
 });
 
