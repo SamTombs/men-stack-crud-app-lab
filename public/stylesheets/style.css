@@ -1,12 +1,19 @@
- @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&display=swap");
-
+ @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+ 
  * {
   box-sizing: border-box;
  }
 
+ .bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
   body {
-   background: #dfdad1;
-   font-family: "DM Sans", sans-serif;
+   background: #000000;
+   font-family: "Bebas Neue", sans-serif;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -15,12 +22,12 @@
  }
 
  h1 {
-   color: #779fb0;
+   color: #c6cc25;
    font-size: 3.6em;
  }
 
  .car-pic1 {
-   height: 30%;
+   height: 40vw;
  }
 
   .cars-index-link {
@@ -28,8 +35,8 @@
  }
 
  .index-link-text {
-   background-color: #a8cce8;
-   color: white;
+   background-color: #c6cc25;;
+   color: rgb(4, 3, 3);
    font-size: 1.4em;
    width: 10em;
    padding: 5px 5px;
@@ -65,12 +72,13 @@
  }
 
   .car-details {
-   font-family: "DM Sans", sans-serif;
+   font-family: "Bebas Neue", sans-serif;
+   font-size: 20px;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: flex-start;
-   background-color: #b9ced9;
+   background-color: #607a8289;
    padding: 20px 30px;
    border-radius: 20px;
    box-shadow: 5px 6px #daedf0;
@@ -78,29 +86,24 @@
  }
 
  form {
-   font-family: "DM Sans", sans-serif;
+   font-family: "Bebas Neue", sans-serif;
    display: flex;
    flex-direction: column;
    justify-content: center;
-   background-color: #b9ced9;
+   background-color: #5f7784;
    padding: 20px 30px;
    border-radius: 20px;
-   box-shadow: 5px 6px #daedf0;
    margin: 20px 10px;
  }
 
- label,
- input {
-   margin: 10px 2px 0 2px;
- }
 
- button {
+ button, .edit-button {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
    justify-content: center;
    margin: 10px 4px 4px 4px;
    background-color: #cb5252;
-   color: white;
+   color: rgb(1, 1, 1);
    padding: 5px 10px;
    border-radius: 15px;
    border: none;
@@ -109,15 +112,8 @@
  }
 
  .edit-button {
-    align-self: center;
-   margin: 10px 4px 4px 4px;
-   background-color: #91eaa4;
-   color: white;
-   padding: 5px 15px;
-   border-radius: 15px;
-   border: none;
-   cursor: pointer;
-   text-decoration: none;
+  background-color: #22c470;
+  text-decoration: none;
  }
  
  button:hover {

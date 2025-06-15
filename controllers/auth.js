@@ -2,8 +2,7 @@ const User = require("../models/user.js");
 const bcrypt = require("bcrypt");
 
 const express = require("express");
-//object to define all end points and get methods.
-// App . gets move to the router from the server.js . it's middleware. app. use router.
+
 const router = express.Router();
 
 router.get("/sign-up", (req, res) => {
